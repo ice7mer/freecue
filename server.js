@@ -7,7 +7,7 @@ const ROUTES = {
   'pexels/videos': { p: 'pexels', ttl: 36e5, url: q => 'https://api.pexels.com/videos/search?per_page=15&query=' + enc(q) },
   'pexels/photos': { p: 'pexels', ttl: 36e5, url: q => 'https://api.pexels.com/v1/search?per_page=18&query=' + enc(q) },
   'pixabay/videos': { p: 'pixabay', ttl: 864e5, url: (q, ai) => 'https://pixabay.com/api/videos/?per_page=20&key=' + enc(KEY.pixabay) + '&q=' + enc(ai ? q + ' ai generated' : q) },
-  'pixabay/images': { p: 'pixabay', ttl: 864e5, url: (q, ai) => 'https://pixabay.com/api/?per_page=20&image_type=' + (ai ? 'all' : 'photo') + '&key=' + enc(KEY.pixabay) + '&q=' + enc(ai ? q + ' ai generated' : q) }
+  'pixabay/images': { p: 'pixabay', ttl: 864e5, url: (q, ai, type) => 'https://pixabay.com/api/?per_page=20&image_type=' + type + '&key=' + enc(KEY.pixabay) + '&q=' + enc(ai ? q + ' ai generated' : q) }
 };
 const MIME = { '.html': 'text/html; charset=utf-8', '.txt': 'text/plain; charset=utf-8', '.xml': 'application/xml; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
 const cache = new Map(), hits = new Map();
@@ -30,11 +30,12 @@ async function api(req, res, u) {
   const ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
   if (limited(ip)) return json(res, 429, { error: 'slow down' });
   const q = (u.searchParams.get('q') || '').trim().slice(0, 100), ai = u.searchParams.get('ai') === '1';
+  const tp = u.searchParams.get('type'), type = ['all', 'photo', 'illustration', 'vector'].includes(tp) ? tp : 'all';
   if (!q) return json(res, 400, { error: 'q required' });
-  const ck = u.pathname + '|' + q.toLowerCase() + '|' + ai, c = cache.get(ck);
+  const ck = u.pathname + '|' + q.toLowerCase() + '|' + ai + '|' + type, c = cache.get(ck);
   if (c && Date.now() < c.exp) return json(res, 200, c.data, true);
   const headers = r.p === 'pexels' ? { Authorization: KEY.pexels } : {};
-  const up = await fetch(r.url(q, ai), { headers, signal: AbortSignal.timeout(8000) }).catch(() => null);
+  const up = await fetch(r.url(q, ai, type), { headers, signal: AbortSignal.timeout(8000) }).catch(() => null);
   if (!up || !up.ok) return json(res, 502, { error: 'upstream' });
   const data = await up.json();
   if (cache.size >= 500) cache.delete(cache.keys().next().value);
