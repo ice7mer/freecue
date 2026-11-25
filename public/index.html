@@ -16,7 +16,6 @@
     <meta property="og:locale" content="ar_AR">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="google-site-verification" content="3G9skelJvhc8OFbc7CHTKw7XREQkuAld7KyGAsU0qZc" />
-    <link rel="dns-prefetch" href="https://commons.wikimedia.org">
     <link rel="dns-prefetch" href="https://api.openverse.org">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script type="application/ld+json">
@@ -214,7 +213,7 @@
                     <option value="vector" data-i18n="tyvec">فيكتور / أيقونات</option>
                 </select>
             </div>
-            <p id="aiNote" data-i18n="ainote" class="hidden max-w-2xl mx-auto mb-4 text-[11px] leading-relaxed text-amber-200/90 bg-amber-500/10 border border-amber-500/25 rounded-xl p-2.5">المصادر المدعومة حالياً للمحتوى المصنَّف كمولَّد بالذكاء الاصطناعي: ويكيميديا كومنز وPixabay. لا يستطيع الموقع التحقق من كون العمل خاماً وغير معدَّل بشرياً؛ راجع صفحة المصدر قبل الاستخدام.</p>
+            <p id="aiNote" data-i18n="ainote" class="hidden max-w-2xl mx-auto mb-4 text-[11px] leading-relaxed text-amber-200/90 bg-amber-500/10 border border-amber-500/25 rounded-xl p-2.5">المصدر المدعوم حالياً للمحتوى المصنَّف كمولَّد بالذكاء الاصطناعي: Pixabay فقط. لا يستطيع الموقع التحقق من كون العمل خاماً وغير معدَّل بشرياً؛ راجع صفحة المصدر قبل الاستخدام.</p>
 
             <!-- صندوق إدخال البرومبت -->
             <div class="glass-panel rounded-2xl p-2 sm:p-3 shadow-2xl shadow-indigo-950/50 border border-indigo-500/30 focus-within:border-indigo-400 transition-all">
@@ -491,7 +490,7 @@
                             <span id="modalQualityBadge" class="px-3 py-1 rounded-lg bg-slate-800 text-indigo-300 border border-slate-700 text-xs font-en font-bold">4K UHD</span>
                             <span id="modalDurationBadge" class="px-3 py-1 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 text-xs font-medium">0:18 ثانية</span>
                             <span id="modalOrientationBadge" class="px-3 py-1 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 text-xs font-medium">أفقي 16:9</span>
-                            <span id="modalSourceBadge" class="px-3 py-1 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 text-xs font-medium">المصدر: Wikimedia Commons</span>
+                            <span id="modalSourceBadge" class="px-3 py-1 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 text-xs font-medium">المصدر:</span>
                         </div>
 
                         <!-- الكلمات المفتاحية -->
@@ -619,7 +618,7 @@
                 duration: 28,
                 orientation: 'landscape',
                 license: 'CC0',
-                source: 'Wikimedia / CC0',
+                source: 'Open Media',
                 tags: ['clouds', 'sky', 'mountains', 'blue', 'aerial', 'nature', 'high', 'سحب', 'غيوم', 'جبال', 'سماء', 'طبيعة', 'أزرق']
             },
             {
@@ -717,7 +716,7 @@
                 duration: 14,
                 orientation: 'square',
                 license: 'CC0',
-                source: 'Wikimedia Commons',
+                source: 'Open Media',
                 tags: ['flowers', 'spring', 'garden', 'yellow', 'nature', 'bloom', 'plants', 'أزهار', 'ورود', 'ربيع', 'حديقة', 'طبيعة', 'نباتات']
             },
             {
@@ -1581,10 +1580,10 @@ ar:{
  hero:'صف المشهد الذي تتخيله، وسنجد لك <span class="text-indigo-400">الفيديو أو الصورة المطابقة بدون حقوق</span>',
  sub:'اكتب وصفاً تفصيلياً للمشهد بأي لغة (الإضاءة، الحركة، المكان، الجو العام) وسيحلله الذكاء الاصطناعي ويطابقه مع الفيديوهات والصور المجانية.',
  sttl:'ربط مكتبات الوسائط المجانية (اختياري)',
- apiintro:'يعمل الموقع فوراً دون مفاتيح عبر ويكيميديا كومنز وOpenverse والمكتبة المدمجة. لإضافة <strong>Pexels</strong> و<strong>Pixabay</strong> الصق مفتاح API المجاني الخاص بك.',
+ apiintro:'يعمل الموقع فوراً دون مفاتيح عبر Openverse والمكتبة المدمجة. لإضافة <strong>Pexels</strong> و<strong>Pixabay</strong> الصق مفتاح API المجاني الخاص بك.',
  foot:'فيديو برومبت AI — كل عنصر يعرض ترخيصه الخاص (CC0 أو مجاني للاستخدام أو يتطلب نسب المؤلف). تحقق من الترخيص قبل الاستخدام.',
- seo:'<h2 class="text-lg font-bold text-white mb-2">ابحث عن فيديوهات وصور مجانية بدون حقوق بوصف نصي</h2><p class="mb-4">فيديو برومبت AI محرك بحث يحوّل وصفك للمشهد إلى كلمات بحث دقيقة ويفتش في مكتبات حرة مثل ويكيميديا كومنز وOpenverse وPexels وPixabay. رتّب النتائج حسب نسبة التطابق وصفِّها حسب الجودة (4K و1080p و720p و480p و360p) والمدة والأبعاد ونوع الترخيص.</p><h3 class="font-bold text-white mb-1">هل يمكن استخدام النتائج تجارياً؟</h3><p>كل نتيجة تعرض ترخيصها وصفحة مصدرها: CC0 بلا قيود، وبعض التراخيص تتطلب ذكر المؤلف. تحقق دائماً من الترخيص قبل النشر.</p>',
- ainote:'المصادر المدعومة حالياً للمحتوى المصنَّف كمولَّد بالذكاء الاصطناعي: ويكيميديا كومنز وPixabay. لا يستطيع الموقع التحقق من كون العمل خاماً وغير معدَّل بشرياً؛ راجع صفحة المصدر قبل الاستخدام.',
+ seo:'<h2 class="text-lg font-bold text-white mb-2">ابحث عن فيديوهات وصور مجانية بدون حقوق بوصف نصي</h2><p class="mb-4">فيديو برومبت AI محرك بحث يحوّل وصفك للمشهد إلى كلمات بحث دقيقة ويفتش في مكتبات حرة مثل Openverse وPexels وPixabay. رتّب النتائج حسب نسبة التطابق وصفِّها حسب الجودة (4K و1080p و720p و480p و360p) والمدة والأبعاد ونوع الترخيص.</p><h3 class="font-bold text-white mb-1">هل يمكن استخدام النتائج تجارياً؟</h3><p>كل نتيجة تعرض ترخيصها وصفحة مصدرها: CC0 بلا قيود، وبعض التراخيص تتطلب ذكر المؤلف. تحقق دائماً من الترخيص قبل النشر.</p>',
+ ainote:'المصدر المدعوم حالياً للمحتوى المصنَّف كمولَّد بالذكاء الاصطناعي: Pixabay فقط. لا يستطيع الموقع التحقق من كون العمل خاماً وغير معدَّل بشرياً؛ راجع صفحة المصدر قبل الاستخدام.',
  count:'عرض {n} نتيجة', match:'تطابق', needp:'يرجى كتابة وصف (برومبت) للمشهد الذي تبحث عنه أولاً', done:'تم تحليل البرومبت وترتيب النتائج الأكثر تطابقاً', rst:'تمت إعادة ضبط جميع الفلاتر', saved:'تم حفظ الإعدادات بنجاح', cleared:'تم الرجوع إلى المصادر بدون مفاتيح',
  hint:'اكتب وصفاً في خانة البحث لعرض النتائج', upto:'حتى {n} ثانية', dur:'المدة: {n} ثانية', land:'أفقي (16:9)', port:'عمودي (9:16)', sq:'مربع (1:1)', src:'المصدر', open:'صفحة المصدر',
  lic0t:'ملكية عامة (CC0 / Public Domain)', lic0n:'خالٍ من حقوق النشر: يمكن استخدامه وتعديله تجارياً دون إذن.',
@@ -1604,13 +1603,13 @@ en:{
  lall:'All free licenses', lcc0:'Public domain (CC0)', lfree:'Free for commercial use', lby:'Attribution required (CC BY)',
  emptyT:'No results match all selected filters', emptyP:'Try a wider duration range, choose “All” for quality and ratio, or reword your prompt.', resetall:'Reset all filters',
  mdesc:'Scene description:', mtags:'Matching tags:', mdlq:'Download quality:', mdl:'Download for free', sapi:'API sources', sttl:'Connect free media libraries (optional)', sclr:'Keyless sources only', ssave:'Save & apply',
- apiintro:'The site works instantly without keys through Wikimedia Commons, Openverse and the built-in library. To add <strong>Pexels</strong> and <strong>Pixabay</strong>, paste your free API key.',
+ apiintro:'The site works instantly without keys through Openverse and the built-in library. To add <strong>Pexels</strong> and <strong>Pixabay</strong>, paste your free API key.',
  aititle:'AI prompt analysis (Semantic Extraction)', aitags:'Extracted keywords:', aimood:'Mood & lighting:', aisq:'Search query:', aiload:'Analyzing scene elements, lighting and keywords…',
  kpex:'Pexels API key (optional):', kpix:'Pixabay API key (optional):',
  foot:'Video Prompt AI — every item shows its own license (CC0, free to use, or attribution required). Check it before using.',
  tv:'Videos', ti:'Images', aiq:'🤖 AI-generated content only',
- ainote:'Currently supported for content labeled as AI-generated: Wikimedia Commons and Pixabay. The site cannot verify that a work is raw and unedited by humans; check the source page before use.',
- seo:'<h2 class="text-lg font-bold text-white mb-2">Find free videos and images from a text prompt</h2><p class="mb-4">Video Prompt AI turns your scene description into precise search terms and searches free libraries such as Wikimedia Commons, Openverse, Pexels and Pixabay. Rank results by match and filter by quality (4K, 1080p, 720p, 480p, 360p), duration, aspect ratio and license.</p><h3 class="font-bold text-white mb-1">Can I use the results commercially?</h3><p>Each result shows its license and source page: CC0 has no restrictions, while some licenses require crediting the author. Always check the license before publishing.</p>',
+ ainote:'Currently supported for content labeled as AI-generated: Pixabay only. The site cannot verify that a work is raw and unedited by humans; check the source page before use.',
+ seo:'<h2 class="text-lg font-bold text-white mb-2">Find free videos and images from a text prompt</h2><p class="mb-4">Video Prompt AI turns your scene description into precise search terms and searches free libraries such as Openverse, Pexels and Pixabay. Rank results by match and filter by quality (4K, 1080p, 720p, 480p, 360p), duration, aspect ratio and license.</p><h3 class="font-bold text-white mb-1">Can I use the results commercially?</h3><p>Each result shows its license and source page: CC0 has no restrictions, while some licenses require crediting the author. Always check the license before publishing.</p>',
  count:'Showing {n} results', match:'Match', needp:'Please write a description (prompt) of the scene first', done:'Prompt analyzed and best matches ranked', rst:'All filters reset', saved:'Settings saved', cleared:'Back to keyless sources',
  hint:'Type a description in the search box to see results', upto:'Up to {n} s', dur:'Duration: {n} s', land:'Landscape (16:9)', port:'Portrait (9:16)', sq:'Square (1:1)', src:'Source', open:'Source page',
  lic0t:'Public domain (CC0)', lic0n:'No copyright restrictions: use and modify commercially without permission.',
@@ -1630,12 +1629,12 @@ fr:{
  lall:'Toutes licences libres', lcc0:'Domaine public (CC0)', lfree:'Libre pour usage commercial', lby:'Attribution requise (CC BY)',
  emptyT:'Aucun résultat pour ces filtres', emptyP:'Élargissez la durée, choisissez « Tous » pour la qualité et le format, ou reformulez votre prompt.', resetall:'Réinitialiser tous les filtres',
  mdesc:'Description de la scène :', mtags:'Tags correspondants :', mdlq:'Qualité de téléchargement :', mdl:'Télécharger gratuitement', sapi:'Sources API', sttl:'Connecter des bibliothèques gratuites (facultatif)', sclr:'Sources sans clé uniquement', ssave:'Enregistrer',
- apiintro:'Le site fonctionne sans clé via Wikimedia Commons, Openverse et la bibliothèque intégrée. Pour ajouter <strong>Pexels</strong> et <strong>Pixabay</strong>, collez votre clé API gratuite.',
+ apiintro:'Le site fonctionne sans clé via Openverse et la bibliothèque intégrée. Pour ajouter <strong>Pexels</strong> et <strong>Pixabay</strong>, collez votre clé API gratuite.',
  aititle:'Analyse IA du prompt', aitags:'Mots-clés extraits :', aimood:'Ambiance et lumière :', aisq:'Requête de recherche :', aiload:'Analyse de la scène, de la lumière et des mots-clés…',
  kpex:'Clé API Pexels (facultatif) :', kpix:'Clé API Pixabay (facultatif) :',
  foot:'Video Prompt AI — chaque élément affiche sa propre licence (CC0, libre d’usage ou attribution requise). Vérifiez-la avant utilisation.',
  tv:'Vidéos', ti:'Images', aiq:'🤖 Contenu généré par IA uniquement',
- ainote:'Pris en charge pour le contenu classé « généré par IA » : Wikimedia Commons et Pixabay. Le site ne peut pas vérifier qu’une œuvre est brute et non retouchée par un humain ; consultez la page source.',
+ ainote:'Pris en charge pour le contenu classé « généré par IA » : Pixabay uniquement. Le site ne peut pas vérifier qu’une œuvre est brute et non retouchée par un humain ; consultez la page source.',
  count:'{n} résultats', match:'Correspondance', needp:'Veuillez d’abord décrire la scène recherchée', done:'Prompt analysé, meilleurs résultats classés', rst:'Filtres réinitialisés', saved:'Paramètres enregistrés', cleared:'Retour aux sources sans clé',
  hint:'Saisissez une description pour afficher les résultats', upto:'Jusqu’à {n} s', dur:'Durée : {n} s', land:'Paysage (16:9)', port:'Portrait (9:16)', sq:'Carré (1:1)', src:'Source', open:'Page source',
  lic0t:'Domaine public (CC0)', lic0n:'Sans restriction : utilisation et modification commerciales sans autorisation.',
@@ -1655,12 +1654,12 @@ es:{
  lall:'Todas las licencias libres', lcc0:'Dominio público (CC0)', lfree:'Gratis para uso comercial', lby:'Requiere atribución (CC BY)',
  emptyT:'Ningún resultado coincide con los filtros', emptyP:'Amplía la duración, elige «Todos» en calidad y formato, o reformula tu prompt.', resetall:'Restablecer todos los filtros',
  mdesc:'Descripción de la escena:', mtags:'Etiquetas coincidentes:', mdlq:'Calidad de descarga:', mdl:'Descargar gratis', sapi:'Fuentes API', sttl:'Conectar bibliotecas gratuitas (opcional)', sclr:'Solo fuentes sin clave', ssave:'Guardar y aplicar',
- apiintro:'El sitio funciona sin claves mediante Wikimedia Commons, Openverse y la biblioteca integrada. Para añadir <strong>Pexels</strong> y <strong>Pixabay</strong>, pega tu clave API gratuita.',
+ apiintro:'El sitio funciona sin claves mediante Openverse y la biblioteca integrada. Para añadir <strong>Pexels</strong> y <strong>Pixabay</strong>, pega tu clave API gratuita.',
  aititle:'Análisis IA del prompt', aitags:'Palabras clave extraídas:', aimood:'Ambiente e iluminación:', aisq:'Consulta de búsqueda:', aiload:'Analizando escena, iluminación y palabras clave…',
  kpex:'Clave API de Pexels (opcional):', kpix:'Clave API de Pixabay (opcional):',
  foot:'Video Prompt AI — cada elemento muestra su propia licencia (CC0, uso libre o atribución requerida). Compruébala antes de usarlo.',
  tv:'Vídeos', ti:'Imágenes', aiq:'🤖 Solo contenido generado por IA',
- ainote:'Compatible con contenido clasificado como generado por IA: Wikimedia Commons y Pixabay. El sitio no puede verificar que una obra sea original y sin retoques humanos; revisa la página de origen.',
+ ainote:'Compatible con contenido clasificado como generado por IA: solo Pixabay. El sitio no puede verificar que una obra sea original y sin retoques humanos; revisa la página de origen.',
  count:'{n} resultados', match:'Coincidencia', needp:'Escribe primero una descripción de la escena', done:'Prompt analizado y resultados ordenados', rst:'Filtros restablecidos', saved:'Ajustes guardados', cleared:'Vuelta a fuentes sin clave',
  hint:'Escribe una descripción para ver resultados', upto:'Hasta {n} s', dur:'Duración: {n} s', land:'Horizontal (16:9)', port:'Vertical (9:16)', sq:'Cuadrado (1:1)', src:'Fuente', open:'Página de origen',
  lic0t:'Dominio público (CC0)', lic0n:'Sin restricciones: uso y modificación comercial sin permiso.',
@@ -1680,12 +1679,12 @@ tr:{
  lall:'Tüm serbest lisanslar', lcc0:'Kamu malı (CC0)', lfree:'Ticari kullanıma ücretsiz', lby:'Atıf gerekir (CC BY)',
  emptyT:'Seçilen filtrelere uyan sonuç yok', emptyP:'Süre aralığını genişletin, kalite ve oran için “Tümü”nü seçin veya istemi değiştirin.', resetall:'Tüm filtreleri sıfırla',
  mdesc:'Sahne açıklaması:', mtags:'Eşleşen etiketler:', mdlq:'İndirme kalitesi:', mdl:'Ücretsiz indir', sapi:'API kaynakları', sttl:'Ücretsiz kütüphaneleri bağla (isteğe bağlı)', sclr:'Yalnızca anahtarsız kaynaklar', ssave:'Kaydet ve uygula',
- apiintro:'Site, Wikimedia Commons, Openverse ve yerleşik kütüphane ile anahtarsız çalışır. <strong>Pexels</strong> ve <strong>Pixabay</strong> eklemek için ücretsiz API anahtarınızı yapıştırın.',
+ apiintro:'Site, Openverse ve yerleşik kütüphane ile anahtarsız çalışır. <strong>Pexels</strong> ve <strong>Pixabay</strong> eklemek için ücretsiz API anahtarınızı yapıştırın.',
  aititle:'Yapay zekâ istem analizi', aitags:'Çıkarılan anahtar kelimeler:', aimood:'Atmosfer ve ışık:', aisq:'Arama sorgusu:', aiload:'Sahne, ışık ve anahtar kelimeler analiz ediliyor…',
  kpex:'Pexels API anahtarı (isteğe bağlı):', kpix:'Pixabay API anahtarı (isteğe bağlı):',
  foot:'Video Prompt AI — her öğe kendi lisansını gösterir (CC0, serbest kullanım veya atıf gerekli). Kullanmadan önce kontrol edin.',
  tv:'Videolar', ti:'Görseller', aiq:'🤖 Yalnızca yapay zekâ üretimi içerik',
- ainote:'Yapay zekâ üretimi olarak etiketlenen içerik için şu an desteklenenler: Wikimedia Commons ve Pixabay. Site, eserin ham ve insan müdahalesiz olduğunu doğrulayamaz; kullanmadan önce kaynak sayfasına bakın.',
+ ainote:'Yapay zekâ üretimi olarak etiketlenen içerik için şu an desteklenen kaynak: yalnızca Pixabay. Site, eserin ham ve insan müdahalesiz olduğunu doğrulayamaz; kullanmadan önce kaynak sayfasına bakın.',
  count:'{n} sonuç', match:'Eşleşme', needp:'Lütfen önce sahneyi tarif eden bir istem yazın', done:'İstem analiz edildi, sonuçlar sıralandı', rst:'Filtreler sıfırlandı', saved:'Ayarlar kaydedildi', cleared:'Anahtarsız kaynaklara dönüldü',
  hint:'Sonuçları görmek için bir açıklama yazın', upto:'En fazla {n} sn', dur:'Süre: {n} sn', land:'Yatay (16:9)', port:'Dikey (9:16)', sq:'Kare (1:1)', src:'Kaynak', open:'Kaynak sayfası',
  lic0t:'Kamu malı (CC0)', lic0n:'Kısıtlama yok: izinsiz ticari kullanım ve düzenleme serbest.',
@@ -1743,23 +1742,6 @@ function mk(o){
 const licClass=n=>{n=(n||'').toLowerCase();if(/cc0|public domain|^pd\b|^pd-/.test(n))return 'CC0';if(/^cc[ -]by/.test(n))return /-nc|-nd| nc| nd/.test(n)?null:'CC-BY';return null};
 
 /* ---- sources ---- */
-async function commons(q,kind,ai){
- const cat=kind==='image'?'AI-generated images':'AI-generated videos';
- const base=ai?'deepcategory:"'+cat+'" ':(kind==='image'?'filetype:'+({photo:'bitmap',vector:'drawing'}[state.imgType]||'bitmap|drawing')+' ':'filetype:video ');
- const run=async term=>{
-  const d=await jget('https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrnamespace=6&gsrlimit=18&gsrsearch='+encodeURIComponent(base+term)+'&prop=imageinfo&iiprop=url|size|mime|extmetadata&iiurlwidth=640');
-  return Object.values((d&&d.query&&d.query.pages)||{});
- };
- let pages=await run(q);if(!pages.length&&ai){pages=await run('');state.aiFallback=pages.length>0}
- return pages.map(p=>{
-  const ii=p.imageinfo&&p.imageinfo[0];if(!ii)return null;const m=ii.extmetadata||{};
-  const ln=(m.LicenseShortName&&m.LicenseShortName.value)||'',lc=licClass(ln);if(!lc)return null;
-  const isVid=/^video\//.test(ii.mime||'')||/\.(webm|ogv|mp4)$/i.test(ii.url||'');if((kind==='video')!==isVid)return null;
-  const title=(p.title||'').replace(/^File:/,'').replace(/\.[a-z0-9]+$/i,'').replace(/_/g,' ');
-  return mk({kind,id:'wc-'+p.pageid,title,desc:strip(m.ImageDescription&&m.ImageDescription.value).slice(0,220),url:ii.url,thumb:ii.thumburl,w:ii.width,h:ii.height,dur:Math.round(ii.duration||0),
-   license:lc,licenseName:ln,source:'Wikimedia Commons',author:strip(m.Artist&&m.Artist.value),page:ii.descriptionurl,ai,q});
- }).filter(Boolean);
-}
 async function openverse(q){
  const d=await jget('https://api.openverse.org/v1/images/?q='+encodeURIComponent(q)+'&license_type=commercial,modification&page_size=18&mature=false'+({photo:'&category=photograph',illustration:'&category=illustration',vector:'&extension=svg'}[state.imgType]||''));
  return ((d&&d.results)||[]).map(r=>{const l=String(r.license||'');return mk({kind:'image',id:'ov-'+r.id,title:r.title,desc:(r.tags||[]).slice(0,6).map(x=>x.name).join(', '),url:r.url,thumb:r.thumbnail,w:r.width,h:r.height,
@@ -1797,8 +1779,8 @@ async function pixabayImg(q,ai){
 function openSettingsModal(){} function closeSettingsModal(){}
 async function fetchExternalVideos(q){
  const ai=state.aiOnly,vid=state.mode==='video';state.aiFallback=false;
- const jobs=vid?(ai?[commons(q,'video',true),pixabayVid(q,true)]:[commons(q,'video',false),pexelsVid(q),pixabayVid(q,false)])
-              :(ai?[commons(q,'image',true),pixabayImg(q,true)]:[commons(q,'image',false),openverse(q),pexelsImg(q),pixabayImg(q,false)]);
+ const jobs=vid?(ai?[pixabayVid(q,true)]:[pexelsVid(q),pixabayVid(q,false)])
+              :(ai?[pixabayImg(q,true)]:[openverse(q),pexelsImg(q),pixabayImg(q,false)]);
  return (await Promise.all(jobs)).flat();
 }
 function mergeResults(ext){return ext}
@@ -1818,7 +1800,7 @@ function refreshSource(){
 }
 function resetSearch(){state.prompt='';state.extractedTags=[];$('promptInput').value='';$('aiAnalysisPanel').classList.add('hidden');toggleClearButton();refreshSource()}
 function updateSourceStatusUI(){
- const n=['Wikimedia'];if(state.mode==='image'&&!state.aiOnly)n.push('Openverse');if(!state.aiOnly)n.push('Pexels');n.push('Pixabay');
+ const n=[];if(state.mode==='image'&&!state.aiOnly)n.push('Openverse');if(!state.aiOnly)n.push('Pexels');n.push('Pixabay');
  $('sourceStatusText').textContent=n.join(' + ');
 }
 
