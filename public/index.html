@@ -7,7 +7,7 @@
     <meta name="description" content="ابحث عن فيديوهات وصور مجانية بدون حقوق (CC0 وRoyalty-Free) بمجرد وصف المشهد. فلترة حسب الجودة من 4K إلى 360p والمدة والأبعاد، مع محتوى مولَّد بالذكاء الاصطناعي.">
     <meta name="keywords" content="فيديوهات مجانية, صور مجانية, بدون حقوق, بدون حقوق نشر, CC0, royalty free videos, free stock video, free stock images, AI generated images, AI generated video, prompt to video search, vidéos libres de droits, vídeos gratis, telifsiz video">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-    <meta name="theme-color" content="#080d1a">
+    <meta name="theme-color" content="#121734">
     <meta name="application-name" content="Video Prompt AI">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Video Prompt AI">
@@ -46,13 +46,12 @@
                     },
                     colors: {
                         slate: {
-                            850: '#151e32',
-                            900: '#0f172a',
-                            950: '#080d1a',
+                            50:'#f4f6ff',100:'#e8ebfa',200:'#dde1f3',300:'#c5cbe8',400:'#a3acd9',500:'#7d88c4',
+                            600:'#5560a8',700:'#3d4890',800:'#2b3474',850:'#222a62',900:'#1a2150',950:'#121734',
                         },
                         indigo: {
-                            450: '#5a67f2',
-                            550: '#4338ca',
+                            50:'#fdf4ff',100:'#fae8ff',200:'#f5d0fe',300:'#f0abfc',400:'#e879f9',450:'#e060f5',500:'#d946ef',
+                            550:'#b01fc3',600:'#c026d3',700:'#a21caf',800:'#86198f',900:'#701a75',950:'#4a044e',
                         }
                     },
                     animation: {
@@ -73,33 +72,33 @@
     <style>
         /* تخصيص شريط التمرير والتأثيرات الزجاجية */
         body {
-            background-color: #080d1a;
+            background-color:#121734;background-image:radial-gradient(1100px 560px at 12% -10%,rgba(217,70,239,.20),transparent 60%),radial-gradient(900px 480px at 92% 0%,rgba(34,211,238,.16),transparent 55%);background-attachment:fixed;
             color: #f8fafc;
             overflow-x: hidden;
         }
 
         .glass-panel {
-            background: rgba(15, 23, 42, 0.72);
+            background: rgba(26, 33, 80, 0.72);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(148, 163, 184, 0.12);
         }
 
         .glass-card {
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.65), rgba(15, 23, 42, 0.85));
+            background: linear-gradient(145deg, rgba(43, 52, 116, 0.65), rgba(26, 33, 80, 0.85));
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(232, 121, 249, 0.15);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(99, 102, 241, 0.5);
-            box-shadow: 0 20px 35px -10px rgba(79, 70, 229, 0.25);
+            border-color: rgba(232, 121, 249, 0.5);
+            box-shadow: 0 20px 35px -10px rgba(217, 70, 239, 0.25);
         }
 
         .hero-glow {
-            background: radial-gradient(circle at 50% 0%, rgba(79, 70, 229, 0.22) 0%, rgba(15, 23, 42, 0) 65%);
+            background: radial-gradient(circle at 50% 0%, rgba(217, 70, 239, 0.22) 0%, rgba(26, 33, 80, 0) 65%);
         }
 
         /* تخصيص شريط التمرير المخصص */
@@ -108,14 +107,14 @@
             height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0f172a;
+            background: #1a2150;
         }
         ::-webkit-scrollbar-thumb {
-            background: #334155;
+            background: #3d4890;
             border-radius: 9999px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #4f46e5;
+            background: #d946ef;
         }
 
         /* تخصيص شريط المدى (Range Slider) */
@@ -126,21 +125,21 @@
             cursor: pointer;
         }
         input[type="range"]::-webkit-slider-runnable-track {
-            background: #1e293b;
+            background: #2b3474;
             height: 0.4rem;
             border-radius: 9999px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(232, 121, 249, 0.2);
         }
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
             margin-top: -5px;
-            background-color: #6366f1;
+            background-color: #e879f9;
             height: 1.1rem;
             width: 1.1rem;
             border-radius: 9999px;
             border: 2px solid #ffffff;
-            box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+            box-shadow: 0 0 10px rgba(232, 121, 249, 0.8);
             transition: transform 0.15s ease;
         }
         input[type="range"]::-webkit-slider-thumb:hover {
@@ -208,6 +207,12 @@
                     <input type="checkbox" id="aiOnly" onchange="setAiOnly(this.checked)" class="accent-indigo-500 w-4 h-4">
                     <span data-i18n="aiq">🤖 محتوى مولَّد بالذكاء الاصطناعي فقط</span>
                 </label>
+                <select id="imgType" onchange="setImgType(this.value)" aria-label="Image type" class="hidden bg-slate-900/80 text-slate-200 text-xs rounded-xl px-3 py-2 border border-slate-700 focus:outline-none focus:border-indigo-500">
+                    <option value="all" data-i18n="tyall">كل الأنواع</option>
+                    <option value="photo" data-i18n="typhoto">صور فوتوغرافية</option>
+                    <option value="illustration" data-i18n="tyill">رسومات</option>
+                    <option value="vector" data-i18n="tyvec">فيكتور / أيقونات</option>
+                </select>
             </div>
             <p id="aiNote" data-i18n="ainote" class="hidden max-w-2xl mx-auto mb-4 text-[11px] leading-relaxed text-amber-200/90 bg-amber-500/10 border border-amber-500/25 rounded-xl p-2.5">المصادر المدعومة حالياً للمحتوى المصنَّف كمولَّد بالذكاء الاصطناعي: ويكيميديا كومنز وPixabay. لا يستطيع الموقع التحقق من كون العمل خاماً وغير معدَّل بشرياً؛ راجع صفحة المصدر قبل الاستخدام.</p>
 
@@ -287,7 +292,11 @@
         </section>
 
         <!-- شريط الفلاتر المتقدمة -->
-        <section id="filtersSection" class="hidden glass-panel rounded-2xl p-4 sm:p-5 mb-8 border border-slate-800/90 shadow-xl">
+        <div id="resultsBar" class="hidden"><div class="flex items-center justify-between gap-3 mb-4">
+                <span id="resultsCount2" class="text-sm text-slate-300"></span>
+                <button id="filtersToggle" onclick="toggleFilters()" aria-expanded="false" aria-controls="filtersSection" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold transition shadow-lg shadow-indigo-500/25">🎚️ <span data-i18n="ftoggle">الفلاتر</span> <span id="filtersArrow">▾</span></button>
+            </div></div>
+            <section id="filtersSection" class="hidden glass-panel rounded-2xl p-4 sm:p-5 mb-8 border border-slate-800/90 shadow-xl">
             <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b border-slate-800/80">
                 <div class="flex items-center gap-2">
                     <i data-lucide="filter" class="w-4 h-4 text-indigo-400"></i>
@@ -1684,6 +1693,11 @@ tr:{
  licbt:'Atıf gerekir (CC BY)', licbn:'Yazara atıfla ticari kullanım serbest. Önerilen atıf:',
  aiw:'🤖 Kaynak tarafından yapay zekâ üretimi olarak etiketlenmiş. İnsan düzenlemesi olmadığı doğrulanamaz; kaynak sayfasına bakın.', dlstart:'İndirme başladı', attr:'Yazara atıf yapmayı unutmayın'}
 };
+Object.assign(T.ar,{ftoggle:'الفلاتر',tyall:'كل الأنواع',typhoto:'صور فوتوغرافية',tyill:'رسومات',tyvec:'فيكتور / أيقونات'});
+Object.assign(T.en,{ftoggle:'Filters',tyall:'All types',typhoto:'Photos',tyill:'Illustrations',tyvec:'Vectors / icons'});
+Object.assign(T.fr,{ftoggle:'Filtres',tyall:'Tous types',typhoto:'Photos',tyill:'Illustrations',tyvec:'Vecteurs / icônes'});
+Object.assign(T.es,{ftoggle:'Filtros',tyall:'Todos los tipos',typhoto:'Fotos',tyill:'Ilustraciones',tyvec:'Vectores / iconos'});
+Object.assign(T.tr,{ftoggle:'Filtreler',tyall:'Tüm türler',typhoto:'Fotoğraflar',tyill:'İllüstrasyonlar',tyvec:'Vektör / simgeler'});
 const tr=(k,orig)=>{const d=T[LANG]||{};if(d[k]!==undefined)return d[k];if(LANG==='ar')return orig!==undefined?orig:k;return T.en[k]!==undefined?T.en[k]:(orig!==undefined?orig:k)};
 const t=k=>tr(k);
 const ttl=v=>LANG==='ar'?v.titleAr:(v.titleEn||v.titleAr);
@@ -1712,7 +1726,7 @@ CURATED_VIDEOS.forEach(v=>{v.kind='video';v.availableQualities=[v.quality];if(/m
 state.mode='video';state.aiOnly=false;state.videos=[];
 
 /* ---- multilingual keywords for the offline analyzer ---- */
-[['sunset','coucher de soleil|atardecer|puesta de sol|gün batımı'],['sunrise','lever du soleil|amanecer|salida del sol|gün doğumu'],['beach','plage|playa|plaj'],['ocean','océan|océano|okyanus|mer méditerranée|deniz'],['forest','forêt|bosque|orman'],['mountains','montagne|montaña|dağ'],['rain','pluie|lluvia|yağmur'],['snow','neige|nieve|kar yağ'],['city','ville|ciudad|şehir'],['night','nuit|noche|gece'],['desert','désert|desierto|çöl'],['flowers','fleur|flores|çiçek'],['fire','feu de|fuego|ateş'],['space','espace|espacio|uzay'],['waterfall','cascade|cascada|şelale'],['coffee','café|kahve'],['clouds','nuage|nube|bulut'],['stars','étoile|estrella|yıldız'],['river','rivière|río|nehir'],['aerial','aérien|aéreo|havadan']].forEach(([en,l])=>l.split('|').forEach(w=>{ARABIC_TO_ENGLISH_SEMANTICS[w]=[en]}));
+[['sunset','coucher de soleil|atardecer|puesta de sol|gün batımı'],['sunrise','lever du soleil|amanecer|salida del sol|gün doğumu'],['beach','plage|playa|plaj'],['ocean','océan|océano|okyanus|mer méditerranée|deniz'],['forest','forêt|bosque|orman'],['mountains','montagne|montaña|dağ'],['rain','pluie|lluvia|yağmur'],['snow','neige|nieve|kar yağ'],['city','ville|ciudad|şehir'],['night','nuit|noche|gece'],['desert','désert|desierto|çöl'],['flowers','fleur|flores|çiçek'],['fire','feu de|fuego|ateş'],['space','espace|espacio|uzay'],['waterfall','cascade|cascada|şelale'],['coffee','café|kahve'],['clouds','nuage|nube|bulut'],['stars','étoile|estrella|yıldız'],['river','rivière|río|nehir'],['aerial','aérien|aéreo|havadan'],['icons','ايقونات|أيقونات|ايقونة|أيقونة|icône|icônes|iconos|simge'],['vector','فيكتور|vecteur|vectorial|vektör']].forEach(([en,l])=>l.split('|').forEach(w=>{ARABIC_TO_ENGLISH_SEMANTICS[w]=[en]}));
 
 /* ---- normalization helpers ---- */
 const qLabel=(w,h)=>{const s=Math.min(w||0,h||0);return !s?'N/A':s>=2160?'4K':s>=1080?'1080p':s>=720?'720p':s>=480?'480p':'360p'};
@@ -1731,7 +1745,7 @@ const licClass=n=>{n=(n||'').toLowerCase();if(/cc0|public domain|^pd\b|^pd-/.tes
 /* ---- sources ---- */
 async function commons(q,kind,ai){
  const cat=kind==='image'?'AI-generated images':'AI-generated videos';
- const base=ai?'deepcategory:"'+cat+'" ':(kind==='image'?'filetype:bitmap ':'filetype:video ');
+ const base=ai?'deepcategory:"'+cat+'" ':(kind==='image'?'filetype:'+({photo:'bitmap',vector:'drawing'}[state.imgType]||'bitmap|drawing')+' ':'filetype:video ');
  const run=async term=>{
   const d=await jget('https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrnamespace=6&gsrlimit=18&gsrsearch='+encodeURIComponent(base+term)+'&prop=imageinfo&iiprop=url|size|mime|extmetadata&iiurlwidth=640');
   return Object.values((d&&d.query&&d.query.pages)||{});
@@ -1747,13 +1761,13 @@ async function commons(q,kind,ai){
  }).filter(Boolean);
 }
 async function openverse(q){
- const d=await jget('https://api.openverse.org/v1/images/?q='+encodeURIComponent(q)+'&license_type=commercial,modification&page_size=18&mature=false');
+ const d=await jget('https://api.openverse.org/v1/images/?q='+encodeURIComponent(q)+'&license_type=commercial,modification&page_size=18&mature=false'+({photo:'&category=photograph',illustration:'&category=illustration',vector:'&extension=svg'}[state.imgType]||''));
  return ((d&&d.results)||[]).map(r=>{const l=String(r.license||'');return mk({kind:'image',id:'ov-'+r.id,title:r.title,desc:(r.tags||[]).slice(0,6).map(x=>x.name).join(', '),url:r.url,thumb:r.thumbnail,w:r.width,h:r.height,
   license:/^(cc0|pdm)$/.test(l)?'CC0':'CC-BY',licenseName:l==='cc0'?'CC0':l==='pdm'?'Public Domain Mark':'CC '+l.toUpperCase()+(r.license_version?' '+r.license_version:''),
   source:'Openverse'+(r.source?' / '+r.source:''),author:r.creator,page:r.foreign_landing_url,q})});
 }
 const isAiTag=h=>/\bai[ -]generated\b/i.test(h.tags||'');
-const api=(p,q,ai)=>jget('/api/'+p+'?q='+encodeURIComponent(q)+(ai?'&ai=1':''));
+const api=(p,q,ai)=>jget('/api/'+p+'?q='+encodeURIComponent(q)+(ai?'&ai=1':'')+(p==='pixabay/images'?'&type='+state.imgType:''));
 async function pexelsVid(q){
  const d=await api('pexels/videos',q);
  return ((d&&d.videos)||[]).map(v=>{
@@ -1764,6 +1778,7 @@ async function pexelsVid(q){
  }).filter(Boolean);
 }
 async function pexelsImg(q){
+ if(state.imgType==='vector'||state.imgType==='illustration')return [];
  const d=await api('pexels/photos',q);
  return ((d&&d.photos)||[]).map(p=>mk({kind:'image',id:'px-'+p.id,title:p.alt||q,url:p.src.original,thumb:p.src.medium,w:p.width,h:p.height,license:'Royalty-Free',licenseName:'Pexels License',source:'Pexels',author:p.photographer,page:p.url,q}));
 }
@@ -1793,7 +1808,7 @@ const tabCls=a=>'px-4 py-1.5 rounded-lg text-sm transition '+(a?'bg-indigo-600 t
 function setMode(m){
  state.mode=m;$('tabVideo').className=tabCls(m==='video');$('tabImage').className=tabCls(m==='image');
  $('tabVideo').setAttribute('aria-selected',m==='video');$('tabImage').setAttribute('aria-selected',m==='image');
- const d=$('durationRangeSlider').closest('.rounded-xl');d.classList.toggle('opacity-40',m==='image');d.classList.toggle('pointer-events-none',m==='image');
+ const d=$('durationRangeSlider').closest('.rounded-xl');d.classList.toggle('opacity-40',m==='image');d.classList.toggle('pointer-events-none',m==='image');$('imgType').classList.toggle('hidden',m!=='image');
  updateSourceStatusUI();refreshSource();
 }
 function setAiOnly(v){state.aiOnly=v;$('aiNote').classList.toggle('hidden',!v);updateSourceStatusUI();refreshSource()}
@@ -1829,11 +1844,14 @@ function cardHtml(v,i){
 }
 function renderVideoGrid(){
  const g=$('videosGrid'),e=$('emptyState'),h=$('hintState'),L=state.filteredVideos;
- $('filtersSection').classList.toggle('hidden',!state.prompt);$('resultsCountLabel').textContent=t('count').replace('{n}',L.length);h.classList.add('hidden');
+ $('filtersSection').classList.toggle('hidden',!(state.prompt&&state.filtersOpen));$('resultsBar').classList.toggle('hidden',!state.prompt);$('resultsCount2').textContent=t('count').replace('{n}',L.length);$('resultsCountLabel').textContent=t('count').replace('{n}',L.length);h.classList.add('hidden');
  if(!L.length){g.innerHTML='';if(!state.prompt&&!state.videos.length){h.textContent=t('hint');h.classList.remove('hidden');e.classList.add('hidden')}else e.classList.remove('hidden');return}
  e.classList.add('hidden');g.innerHTML=L.map(cardHtml).join('');lucide.createIcons();
 }
 
+state.filtersOpen=false;state.imgType='all';
+function toggleFilters(){state.filtersOpen=!state.filtersOpen;$('filtersSection').classList.toggle('hidden',!(state.prompt&&state.filtersOpen));$('filtersToggle').setAttribute('aria-expanded',state.filtersOpen);$('filtersArrow').textContent=state.filtersOpen?'▴':'▾'}
+function setImgType(v){state.imgType=v;refreshSource()}
 /* ---- preview modal / download ---- */
 function openPreviewModal(i){
  const v=state.filteredVideos[i];if(!v)return;state.selectedVideo=v;
