@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="fc-icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#fc-icon-grad)" />
+  <path d="M20 23L28 32L20 41" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M33 24.5L45 32L33 39.5V24.5Z" fill="#FFFFFF" />
+  <path d="M46 15L47.2 17.8L50 19L47.2 20.2L46 23L44.8 20.2L42 19L44.8 17.8L46 15Z" fill="#E0F2FE" />
+</svg>
