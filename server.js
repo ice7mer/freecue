@@ -3,11 +3,25 @@ const http = require('http'), fs = require('fs'), path = require('path');
 const PORT = process.env.PORT || 3000, PUB = path.join(__dirname, 'public');
 const KEY = { pexels: process.env.PEXELS_API_KEY, pixabay: process.env.PIXABAY_API_KEY };
 const enc = encodeURIComponent;
+const ICON_RE = /\b(icons?|vectors?|svg)\b/i;
+
+function resolvePixabayImageType(q, type) {
+  if (type && type !== 'all') return type;
+  return ICON_RE.test(q) ? 'vector' : 'all';
+}
+
 const ROUTES = {
   'pexels/videos': { p: 'pexels', ttl: 36e5, url: q => 'https://api.pexels.com/videos/search?per_page=15&query=' + enc(q) },
   'pexels/photos': { p: 'pexels', ttl: 36e5, url: q => 'https://api.pexels.com/v1/search?per_page=18&query=' + enc(q) },
   'pixabay/videos': { p: 'pixabay', ttl: 864e5, url: (q, ai) => 'https://pixabay.com/api/videos/?per_page=20&key=' + enc(KEY.pixabay) + '&q=' + enc(ai ? q + ' ai generated' : q) },
-  'pixabay/images': { p: 'pixabay', ttl: 864e5, url: (q, ai, type) => 'https://pixabay.com/api/?per_page=20&image_type=' + type + '&key=' + enc(KEY.pixabay) + '&q=' + enc(ai ? q + ' ai generated' : q) }
+  'pixabay/images': {
+    p: 'pixabay',
+    ttl: 864e5,
+    url: (q, ai, type) => {
+      const effectiveType = resolvePixabayImageType(q, type);
+      return 'https://pixabay.com/api/?per_page=20&image_type=' + enc(effectiveType) + '&key=' + enc(KEY.pixabay) + '&q=' + enc(ai ? q + ' ai generated' : q);
+    }
+  }
 };
 const MIME = { '.html': 'text/html; charset=utf-8', '.txt': 'text/plain; charset=utf-8', '.xml': 'application/xml; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
 const cache = new Map(), hits = new Map();
@@ -32,10 +46,11 @@ async function api(req, res, u) {
   const q = (u.searchParams.get('q') || '').trim().slice(0, 100), ai = u.searchParams.get('ai') === '1';
   const tp = u.searchParams.get('type'), type = ['all', 'photo', 'illustration', 'vector'].includes(tp) ? tp : 'all';
   if (!q) return json(res, 400, { error: 'q required' });
-  const ck = u.pathname + '|' + q.toLowerCase() + '|' + ai + '|' + type, c = cache.get(ck);
+  const effectiveType = r.p === 'pixabay' && u.pathname.endsWith('/images') ? resolvePixabayImageType(q, type) : type;
+  const ck = u.pathname + '|' + q.toLowerCase() + '|' + ai + '|' + effectiveType, c = cache.get(ck);
   if (c && Date.now() < c.exp) return json(res, 200, c.data, true);
   const headers = r.p === 'pexels' ? { Authorization: KEY.pexels } : {};
-  const up = await fetch(r.url(q, ai, type), { headers, signal: AbortSignal.timeout(8000) }).catch(() => null);
+  const up = await fetch(r.url(q, ai, effectiveType), { headers, signal: AbortSignal.timeout(8000) }).catch(() => null);
   if (!up || !up.ok) return json(res, 502, { error: 'upstream' });
   const data = await up.json();
   if (cache.size >= 500) cache.delete(cache.keys().next().value);
